@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nativetransitions" version="0.0.1">
+    <name>Native Transitions</name>
+    <author>Lee Crossley (http://ilee.co.uk/)</author>
+    <description>Cordova / PhoneGap Plugin for native transitions.</description>
+    <keywords>cordova, transition, transitions, page, animate, animation</keywords>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/nativetransitions.js" name="NativeTransitions">
+        <clobbers target="nativetransitions" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="NativeTransitions">
+                <param name="ios-package" value="NativeTransitions" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/NativeTransitions.h" />
+        <source-file src="src/ios/NativeTransitions.m" />
+    </platform>
+</plugin>
