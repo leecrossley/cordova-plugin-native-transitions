@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nativetransitions" version="0.1.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nativetransitions" version="0.1.1">
     <name>Native Transitions</name>
     <author>Lee Crossley (http://ilee.co.uk/)</author>
-    <description>Cordova / PhoneGap Plugin for native transitions.</description>
-    <keywords>cordova, transition, transitions, page, animate, animation</keywords>
+    <description>Cordova / PhoneGap Plugin for native transitions. Emulating transitions are a thing of the past, you can now use real native transitions directly from your JavaScript! Supports flip, curl and fade.</description>
+    <keywords>cordova, transition, transitions, page, animate, animation, flip, curl, fade</keywords>
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
