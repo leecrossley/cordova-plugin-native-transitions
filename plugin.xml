@@ -14,7 +14,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="NativeTransitions">
                 <param name="ios-package" value="NativeTransitions" />
-                <param name="onload" value="true"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
         <header-file src="src/ios/NativeTransitions.h" />
