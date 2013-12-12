@@ -11,27 +11,39 @@
 
 - (void) right:(CDVInvokedUrlCommand*)command;
 {
+    NSMutableDictionary *args = [command.arguments objectAtIndex:0];
+    float duration = [[args objectForKey:@"duration"] integerValue];
+
     [UIView transitionWithView:self.viewController.view
-                    duration:0.5
-                    options:UIViewAnimationOptionTransitionFlipFromLeft
+                    duration:duration
+                    options:UIViewAnimationOptionAllowAnimatedContent
+                        |UIViewAnimationOptionTransitionFlipFromLeft
                     animations:^{}
                     completion:^(BOOL finished) {}];
 }
 
 - (void) left:(CDVInvokedUrlCommand*)command;
 {
+    NSMutableDictionary *args = [command.arguments objectAtIndex:0];
+    float duration = [[args objectForKey:@"duration"] integerValue];
+
     [UIView transitionWithView:self.viewController.view
-                    duration:0.5
-                    options:UIViewAnimationOptionTransitionFlipFromRight
+                    duration:duration
+                    options:UIViewAnimationOptionAllowAnimatedContent
+                        |UIViewAnimationOptionTransitionFlipFromRight
                     animations:^{}
                     completion:^(BOOL finished) {}];
 }
 
 - (void) fade:(CDVInvokedUrlCommand*)command;
 {
+    NSMutableDictionary *args = [command.arguments objectAtIndex:0];
+    float duration = [[args objectForKey:@"duration"] integerValue];
+
     [UIView transitionWithView:self.viewController.view
-                    duration:0.5
-                    options:UIViewAnimationOptionTransitionCrossDissolve
+                    duration:duration
+                    options:UIViewAnimationOptionAllowAnimatedContent
+                        |UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{}
                     completion:^(BOOL finished) {}];
 }
