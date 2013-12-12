@@ -12,7 +12,7 @@
 - (void) right:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
-    float duration = [[args objectForKey:@"duration"] integerValue];
+    double duration = [[args objectForKey:@"duration"] doubleValue];
 
     [UIView transitionWithView:self.viewController.view
                     duration:duration
@@ -25,7 +25,7 @@
 - (void) left:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
-    float duration = [[args objectForKey:@"duration"] integerValue];
+    double duration = [[args objectForKey:@"duration"] doubleValue];
 
     [UIView transitionWithView:self.viewController.view
                     duration:duration
@@ -38,7 +38,7 @@
 - (void) fade:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
-    float duration = [[args objectForKey:@"duration"] integerValue];
+    double duration = [[args objectForKey:@"duration"] doubleValue];
 
     [UIView transitionWithView:self.viewController.view
                     duration:duration
