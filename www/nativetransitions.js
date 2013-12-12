@@ -5,16 +5,27 @@ var NativeTransitions = function () {
     this.name = "NativeTransitions";
 };
 
-NativeTransitions.prototype.right = function (success, failure, duration) {
-    exec(success, failure, "NativeTransitions", "right", [{"duration": duration}]);
+NativeTransitions.prototype.flip = function (duration, direction, onComplete) {
+    var options = {
+        "duration": duration,
+        "direction": direction
+    };
+    exec(onComplete, null, "NativeTransitions", "flip", [options]);
 };
 
-NativeTransitions.prototype.left = function (success, failure, duration) {
-    exec(success, failure, "NativeTransitions", "left", [{"duration": duration}]);
+NativeTransitions.prototype.curl = function (duration, direction, onComplete) {
+    var options = {
+        "duration": duration,
+        "direction": direction
+    };
+    exec(onComplete, null, "NativeTransitions", "curl", [options]);
 };
 
-NativeTransitions.prototype.fade = function (success, failure, duration) {
-    exec(success, failure, "NativeTransitions", "fade", [{"duration": duration}]);
+NativeTransitions.prototype.fade = function (duration, onComplete) {
+    var options = {
+        "duration": duration
+    };
+    exec(onComplete, null, "NativeTransitions", "fade", [options]);
 };
 
 module.exports = new NativeTransitions();

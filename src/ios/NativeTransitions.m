@@ -9,30 +9,52 @@
 
 @implementation NativeTransitions
 
-- (void) right:(CDVInvokedUrlCommand*)command;
+- (void) flip:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     double duration = [[args objectForKey:@"duration"] doubleValue];
+    NSString *direction = [[args objectForKey:@"direction"] stringValue];
+
+    NSUInteger animation = UIViewAnimationOptionTransitionFlipFromLeft;
+
+    if ([direction isEqualToString:@"right"])
+    {
+        animation = UIViewAnimationOptionTransitionFlipFromRight;
+    }
 
     [UIView transitionWithView:self.viewController.view
                     duration:duration
                     options:UIViewAnimationOptionAllowAnimatedContent
-                        |UIViewAnimationOptionTransitionFlipFromLeft
+                        |animation
                     animations:^{}
-                    completion:^(BOOL finished) {}];
+                    completion:^(BOOL finished) {
+                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                    }];
 }
 
-- (void) left:(CDVInvokedUrlCommand*)command;
+- (void) curl:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     double duration = [[args objectForKey:@"duration"] doubleValue];
+    NSString *direction = [[args objectForKey:@"direction"] stringValue];
+
+    NSUInteger animation = UIViewAnimationOptionTransitionCurlUp;
+
+    if ([direction isEqualToString:@"down"])
+    {
+        animation = UIViewAnimationOptionTransitionCurlDown;
+    }
 
     [UIView transitionWithView:self.viewController.view
                     duration:duration
                     options:UIViewAnimationOptionAllowAnimatedContent
-                        |UIViewAnimationOptionTransitionFlipFromRight
+                        |animation
                     animations:^{}
-                    completion:^(BOOL finished) {}];
+                    completion:^(BOOL finished) {
+                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                    }];
 }
 
 - (void) fade:(CDVInvokedUrlCommand*)command;
@@ -45,7 +67,10 @@
                     options:UIViewAnimationOptionAllowAnimatedContent
                         |UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{}
-                    completion:^(BOOL finished) {}];
+                    completion:^(BOOL finished) {
+                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                    }];
 }
 
 @end

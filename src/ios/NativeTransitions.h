@@ -8,8 +8,8 @@
 
 @interface NativeTransitions : CDVPlugin
 
-- (void) right:(CDVInvokedUrlCommand*)command;
-- (void) left:(CDVInvokedUrlCommand*)command;
+- (void) flip:(CDVInvokedUrlCommand*)command;
+- (void) curl:(CDVInvokedUrlCommand*)command;
 - (void) fade:(CDVInvokedUrlCommand*)command;
 
 @end
