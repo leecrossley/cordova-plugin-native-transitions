@@ -10,7 +10,11 @@ NativeTransitions.prototype.right = function (success, failure) {
 };
 
 NativeTransitions.prototype.left = function (success, failure) {
-    exec(success, failure, "NativeTransitions", "right", []);
+    exec(success, failure, "NativeTransitions", "left", []);
+};
+
+NativeTransitions.prototype.fade = function (success, failure) {
+    exec(success, failure, "NativeTransitions", "fade", []);
 };
 
 module.exports = new NativeTransitions();
