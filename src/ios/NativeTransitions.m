@@ -13,7 +13,7 @@
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     double duration = [[args objectForKey:@"duration"] doubleValue];
-    NSString *direction = [[args objectForKey:@"direction"] stringValue];
+    NSString *direction = [args objectForKey:@"direction"];
 
     NSUInteger animation = UIViewAnimationOptionTransitionFlipFromLeft;
 
@@ -37,7 +37,7 @@
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     double duration = [[args objectForKey:@"duration"] doubleValue];
-    NSString *direction = [[args objectForKey:@"direction"] stringValue];
+    NSString *direction = [args objectForKey:@"direction"];
 
     NSUInteger animation = UIViewAnimationOptionTransitionCurlUp;
 
