@@ -16,7 +16,7 @@ You **do not** need to reference any JavaScript, the Cordova plugin architecture
 
 ### Flip
 
-```
+```js
 var duration = 0.5, // animation time in seconds
     direction = "right"; // animation direction - left || right
 nativetransitions.flip(duration, direction, onComplete);
@@ -24,7 +24,7 @@ nativetransitions.flip(duration, direction, onComplete);
 
 ### Curl
 
-```
+```js
 var duration = 0.5, // animation time in seconds
     direction = "down"; // animation direction - up || down
 nativetransitions.curl(duration, direction, onComplete);
@@ -32,9 +32,20 @@ nativetransitions.curl(duration, direction, onComplete);
 
 ### Fade
 
-```
+```js
 var duration = 0.5; // animation time in seconds
 nativetransitions.fade(duration, onComplete);
+```
+
+## Example
+
+Here's an example of how I suggest you use the plugin in your code, so that you get a realistic transition:
+
+```js
+setTimeout(function() {
+    // Change your html here
+}, 50);
+nativetransitions.flip(duration, direction);
 ```
 
 ## Platform Support
