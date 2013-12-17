@@ -2,7 +2,7 @@
 
 Emulating transitions are a thing of the past, you can now use real native page transitions directly from your JavaScript!
 
-\centerline{\includegraphics[height=2in]{[![Video](https://secure-b.vimeocdn.com/ts/458/216/458216578_1280.jpg)](https://vimeo.com/81980283)}}
+[![Video](http://ilee.co.uk/img/transition.png)](https://vimeo.com/81980283)
 
 You can read the full blog post [here](http://ilee.co.uk/native-page-transitions-with-phonegap/).
 
