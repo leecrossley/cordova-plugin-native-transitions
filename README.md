@@ -1,8 +1,10 @@
 ## Native Transitions Plugin for Apache Cordova
 
-Emulating transitions are a thing of the past, you can now use real native transitions directly from your JavaScript!
+Emulating transitions are a thing of the past, you can now use real native page transitions directly from your JavaScript!
 
-NB: The code under active development and is written to suit my current project.
+[![Video](https://secure-b.vimeocdn.com/ts/458/216/458216578_1280.jpg)](https://vimeo.com/81980283)
+
+You can read the full blog post [here](http://ilee.co.uk/native-page-transitions-with-phonegap/).
 
 ## Install
 
