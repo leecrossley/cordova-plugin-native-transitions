@@ -8,11 +8,23 @@ You can read the full blog post [here](http://ilee.co.uk/native-page-transitions
 
 ## Install
 
+### Locally
+
 ```
 cordova plugin add https://github.com/leecrossley/cordova-plugin-native-transitions.git
 ```
 
 You **do not** need to reference any JavaScript, the Cordova plugin architecture will add a nativetransitions object to your root automatically when you build.
+
+### PhoneGap build
+
+Add the following to your `config.xml` to use version 0.1.3 (you can also omit the version attribute to always use the latest version):
+
+```
+<gap:plugin name="uk.co.ilee.nativetransitions" version="0.1.3" />
+```
+
+For more information, see the [PhoneGap build website](https://build.phonegap.com/plugins/887).
 
 ## Transitions
 
