@@ -6,6 +6,10 @@ Emulating transitions are a thing of the past, you can now use real native page 
 
 You can read the full blog post [here](http://ilee.co.uk/native-page-transitions-with-phonegap/).
 
+#### Live demo
+
+See this plugin working in a live app: http://playadds.com
+
 ## Install
 
 ### Locally
