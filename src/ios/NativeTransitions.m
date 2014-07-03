@@ -21,6 +21,14 @@
     {
         transition = UIViewAnimationOptionTransitionFlipFromRight;
     }
+    else if ([direction isEqualToString:@"top"])
+    {
+        transition = UIViewAnimationOptionTransitionFlipFromTop;
+    }
+    else if ([direction isEqualToString:@"bottom"])
+    {
+        transition = UIViewAnimationOptionTransitionFlipFromBottom;
+    }
 
     [self performNativeTransition:transition withDuration:duration];
 }
