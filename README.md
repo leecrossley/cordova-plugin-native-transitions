@@ -22,10 +22,10 @@ You **do not** need to reference any JavaScript, the Cordova plugin architecture
 
 ### PhoneGap build
 
-Add the following to your `config.xml` to use version 0.1.3 (you can also omit the version attribute to always use the latest version):
+Add the following to your `config.xml` to use version 0.1.4 (you can also omit the version attribute to always use the latest version):
 
 ```
-<gap:plugin name="uk.co.ilee.nativetransitions" version="0.1.3" />
+<gap:plugin name="uk.co.ilee.nativetransitions" version="0.1.4" />
 ```
 
 For more information, see the [PhoneGap build website](https://build.phonegap.com/plugins/887).
