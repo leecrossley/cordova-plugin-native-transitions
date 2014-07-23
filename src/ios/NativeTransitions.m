@@ -12,60 +12,56 @@
 - (void) flip:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
-    double duration = [[args objectForKey:@"duration"] doubleValue];
+    NSTimeInterval duration = [[args objectForKey:@"duration"] doubleValue];
     NSString *direction = [args objectForKey:@"direction"];
 
-    NSUInteger animation = UIViewAnimationOptionTransitionFlipFromLeft;
+    UIViewAnimationOptions transition = UIViewAnimationOptionTransitionFlipFromLeft;
 
     if ([direction isEqualToString:@"right"])
     {
-        animation = UIViewAnimationOptionTransitionFlipFromRight;
+        transition = UIViewAnimationOptionTransitionFlipFromRight;
+    }
+    else if ([direction isEqualToString:@"top"])
+    {
+        transition = UIViewAnimationOptionTransitionFlipFromTop;
+    }
+    else if ([direction isEqualToString:@"bottom"])
+    {
+        transition = UIViewAnimationOptionTransitionFlipFromBottom;
     }
 
-    [UIView transitionWithView:self.viewController.view
-                    duration:duration
-                    options:UIViewAnimationOptionAllowAnimatedContent
-                        |animation
-                    animations:^{}
-                    completion:^(BOOL finished) {
-                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-                    }];
+    [self performNativeTransition:transition withDuration:duration];
 }
 
 - (void) curl:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
-    double duration = [[args objectForKey:@"duration"] doubleValue];
+    NSTimeInterval duration = [[args objectForKey:@"duration"] doubleValue];
     NSString *direction = [args objectForKey:@"direction"];
 
-    NSUInteger animation = UIViewAnimationOptionTransitionCurlUp;
+    UIViewAnimationOptions transition = UIViewAnimationOptionTransitionCurlUp;
 
     if ([direction isEqualToString:@"down"])
     {
-        animation = UIViewAnimationOptionTransitionCurlDown;
+        transition = UIViewAnimationOptionTransitionCurlDown;
     }
-
-    [UIView transitionWithView:self.viewController.view
-                    duration:duration
-                    options:UIViewAnimationOptionAllowAnimatedContent
-                        |animation
-                    animations:^{}
-                    completion:^(BOOL finished) {
-                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-                    }];
+    
+    [self performNativeTransition:transition withDuration:duration];
 }
 
 - (void) fade:(CDVInvokedUrlCommand*)command;
 {
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
-    double duration = [[args objectForKey:@"duration"] doubleValue];
+    NSTimeInterval duration = [[args objectForKey:@"duration"] doubleValue];
 
+    [self performNativeTransition:UIViewAnimationOptionTransitionCrossDissolve withDuration:duration]
+}
+
+- (void) performNativeTransition:(UIViewAnimationOptions)transition withDuration:(NSTimeInterval)duration
+{
     [UIView transitionWithView:self.viewController.view
-                    duration:duration
-                    options:UIViewAnimationOptionAllowAnimatedContent
-                        |UIViewAnimationOptionTransitionCrossDissolve
+                      duration:duration
+                       options:UIViewAnimationOptionAllowAnimatedContent | transition
                     animations:^{}
                     completion:^(BOOL finished) {
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];

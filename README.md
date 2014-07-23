@@ -68,7 +68,7 @@ nativetransitions.flip(duration, direction);
 
 ## Platform Support
 
-Currently iOS only (version 4+ I think).
+Currently iOS only (version 5 and higher).
 
 ## License
 
