@@ -30,7 +30,7 @@
         transition = UIViewAnimationOptionTransitionFlipFromBottom;
     }
 
-    [self performNativeTransition:transition withDuration:duration];
+    [self performNativeTransition:transition withDuration:duration withCallback:command.callbackId];
 }
 
 - (void) curl:(CDVInvokedUrlCommand*)command;
@@ -46,7 +46,7 @@
         transition = UIViewAnimationOptionTransitionCurlDown;
     }
 
-    [self performNativeTransition:transition withDuration:duration];
+    [self performNativeTransition:transition withDuration:duration withCallback:command.callbackId];
 }
 
 - (void) fade:(CDVInvokedUrlCommand*)command;
@@ -54,10 +54,10 @@
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     NSTimeInterval duration = [[args objectForKey:@"duration"] doubleValue];
 
-    [self performNativeTransition:UIViewAnimationOptionTransitionCrossDissolve withDuration:duration];
+    [self performNativeTransition:UIViewAnimationOptionTransitionCrossDissolve withDuration:duration withCallback:command.callbackId];
 }
 
-- (void) performNativeTransition:(UIViewAnimationOptions)transition withDuration:(NSTimeInterval)duration
+- (void) performNativeTransition:(UIViewAnimationOptions)transition withDuration:(NSTimeInterval)duration withCallback:(NSString*)callbackId
 {
     [UIView transitionWithView:self.viewController.view
                       duration:duration
@@ -65,7 +65,7 @@
                     animations:^{}
                     completion:^(BOOL finished) {
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                        [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
                     }];
 }
 
