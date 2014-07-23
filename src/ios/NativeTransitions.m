@@ -45,7 +45,7 @@
     {
         transition = UIViewAnimationOptionTransitionCurlDown;
     }
-    
+
     [self performNativeTransition:transition withDuration:duration];
 }
 
@@ -54,7 +54,7 @@
     NSMutableDictionary *args = [command.arguments objectAtIndex:0];
     NSTimeInterval duration = [[args objectForKey:@"duration"] doubleValue];
 
-    [self performNativeTransition:UIViewAnimationOptionTransitionCrossDissolve withDuration:duration]
+    [self performNativeTransition:UIViewAnimationOptionTransitionCrossDissolve withDuration:duration];
 }
 
 - (void) performNativeTransition:(UIViewAnimationOptions)transition withDuration:(NSTimeInterval)duration
