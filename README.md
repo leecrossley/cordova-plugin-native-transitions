@@ -36,7 +36,7 @@ For more information, see the [PhoneGap build website](https://build.phonegap.co
 
 ```js
 var duration = 0.5, // animation time in seconds
-    direction = "right"; // animation direction - left || right
+    direction = "right"; // animation direction - left | right | top | bottom
 nativetransitions.flip(duration, direction, onComplete);
 ```
 
