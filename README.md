@@ -1,6 +1,6 @@
 ## Native Transitions Plugin for Apache Cordova
 
-Emulating transitions are a thing of the past, you can now use real native page transitions directly from your JavaScript!
+**There is an active [kickstarter campaign](https://www.kickstarter.com/projects/leecrossley/cordova-phonegap-native-page-transitions-plugin) for a version 2 of this plugin with more advanced transition effects that this plugin wouldn't be able to do.**
 
 [![Video](http://ilee.co.uk/img/transition.png)](https://vimeo.com/81980283)
 
@@ -22,10 +22,10 @@ You **do not** need to reference any JavaScript, the Cordova plugin architecture
 
 ### PhoneGap build
 
-Add the following to your `config.xml` to use version 0.1.4 (you can also omit the version attribute to always use the latest version):
+Add the following to your `config.xml` to use version 0.1.3 (you can also omit the version attribute to always use the latest version):
 
 ```
-<gap:plugin name="uk.co.ilee.nativetransitions" version="0.1.4" />
+<gap:plugin name="uk.co.ilee.nativetransitions" version="0.1.3" />
 ```
 
 For more information, see the [PhoneGap build website](https://build.phonegap.com/plugins/887).
@@ -44,7 +44,7 @@ nativetransitions.flip(duration, direction, onComplete);
 
 ```js
 var duration = 0.5, // animation time in seconds
-    direction = "down"; // animation direction - up || down
+    direction = "down"; // animation direction - up | down
 nativetransitions.curl(duration, direction, onComplete);
 ```
 
