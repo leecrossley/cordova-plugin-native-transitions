@@ -1,7 +1,5 @@
 ## Native Transitions Plugin for Apache Cordova
 
-**There is an active [kickstarter campaign](https://www.kickstarter.com/projects/leecrossley/cordova-phonegap-native-page-transitions-plugin) for a version 2 of this plugin with more advanced transition effects that this plugin wouldn't be able to do.**
-
 [![Video](http://ilee.co.uk/img/transition.png)](https://vimeo.com/81980283)
 
 You can read the full blog post [here](http://ilee.co.uk/native-page-transitions-with-phonegap/).
