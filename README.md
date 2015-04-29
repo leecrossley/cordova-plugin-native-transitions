@@ -12,7 +12,13 @@ See this plugin working in a live app: http://playadds.com
 
 ## Install
 
-### Locally
+#### Latest published version on npm (with Cordova CLI >= 5.0.0)
+
+```
+cordova plugin add cordova-plugin-native-transitions
+```
+
+#### Latest version from GitHub
 
 ```
 cordova plugin add https://github.com/leecrossley/cordova-plugin-native-transitions.git
