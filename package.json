@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-native-transitions",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)",
   "description": "Cordova / PhoneGap Plugin for native transitions. Emulating transitions are a thing of the past, you can now use real native transitions directly from your JavaScript! Supports flip, curl and fade.",
   "cordova": {

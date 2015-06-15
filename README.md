@@ -1,4 +1,4 @@
-## Native Transitions Plugin for Apache Cordova
+## Native Transitions Plugin for Apache Cordova [![npm version](https://badge.fury.io/js/cordova-plugin-native-transitions.svg)](http://badge.fury.io/js/cordova-plugin-native-transitions)
 
 Emulating transitions are a thing of the past, you can now use real native page transitions directly from your JavaScript!
 
