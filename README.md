@@ -26,15 +26,15 @@ cordova plugin add https://github.com/leecrossley/cordova-plugin-native-transiti
 
 You **do not** need to reference any JavaScript, the Cordova plugin architecture will add a nativetransitions object to your root automatically when you build.
 
-### PhoneGap build
+#### PhoneGap build
 
-Add the following to your `config.xml` to use version 0.1.4 (you can also omit the version attribute to always use the latest version):
+Add the following to your `config.xml` to use version 0.1.4 (you can also omit the version attribute to always use the latest version). You should now use the npm source:
 
 ```
-<gap:plugin name="uk.co.ilee.nativetransitions" version="0.1.4" />
+<gap:plugin name="cordova-plugin-native-transitions" version="0.2.3" source="npm" />
 ```
 
-For more information, see the [PhoneGap build website](https://build.phonegap.com/plugins/931).
+For more information, see the [PhoneGap build docs](http://docs.build.phonegap.com/en_US/configuring_plugins.md.html#Plugins).
 
 ## Transitions
 
